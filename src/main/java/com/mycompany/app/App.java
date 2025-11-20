@@ -8,8 +8,6 @@ public class App
     // ❗ CRITICAL SonarQube issue: Hardcoded credential
     private static final String DB_PASSWORD = "SuperSecretPass123!";  // Sonar: Hardcoded password (CRITICAL)
 
-    private final String message = "Hello World!";
-
     public App() {}
 
     public static void main(String[] args) {
