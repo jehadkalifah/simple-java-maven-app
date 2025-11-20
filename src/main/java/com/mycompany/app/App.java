@@ -5,18 +5,15 @@ package com.mycompany.app;
  */
 public class App
 {
-    // ❗ CRITICAL SonarQube issue: Hardcoded credential
-    private static final String DB_PASSWORD = "SuperSecretPass123!";  // Sonar: Hardcoded password (CRITICAL)
+    // ❗ CRITICAL SonarQube issue: Hardcoded credential (unused → DOES NOT break tests)
+    private static final String DB_PASSWORD = "SuperSecretPass123!";
 
     private final String message = "Hello World!";
 
     public App() {}
 
     public static void main(String[] args) {
-        System.out.println(new App().getMessage());
-
-        // using the bad credential (still compiles fine)
-        System.out.println("Connecting with password: " + DB_PASSWORD);
+        System.out.println(new App().getMessage());  // keeps test output unchanged
     }
 
     private final String getMessage() {
